@@ -70,10 +70,10 @@ double itc_scir(int r) {
 }
 double itc_pow(int num, int step) {
 	int s = 1;
-	for (int i = 0; i < step; i++) {
+	for (int i = 0; i < itc_abs(step); i++) {
 		s *= num;
 	}
-	return s;
+	return step > 0 ? s : (1.0 / s);
 }
 bool itc_ispositive(int num) {
 	return num >= 0;

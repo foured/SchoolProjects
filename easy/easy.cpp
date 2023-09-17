@@ -35,14 +35,13 @@ double itc_fmin(double num1, double num2) {
 	return num1 < num2 ? num1 : num2;
 }
 int itc_sqrt(int num) {
-	int t = -1;
+	if (num == 0) return 0;
 	for (int i = 0; i < num; i++) {
 		if (i * i == num) {
-			t = i;
-			break;
+			return i;
 		}
 	}
-	return t;
+	return -1;
 }
 int itc_skv(int num) {
 	return num > 0 ? num * num : -1;

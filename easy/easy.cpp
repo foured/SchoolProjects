@@ -51,14 +51,12 @@ int itc_spr(int num1, int num2) {
 }
 int itc_str(int num1, int num2, int num3) {
 	if ((num1 > 0 && num2 > 0 && num3 > 0) && ((num1 > num2 + num3) && (num2 > num1 + num3) && (num3 > num1 + num2))) {
-		double p = (num1 + num2 + num3) / 2;
-		int s = itc_sqrt(p * (p - num1) * (p - num2) * (p - num3));
-		if (s != 0)
-			return s;
-		else
-			return -1;
+		float p = (num1 + num2 + num3) / 2;
+		return itc_sqrt(p * (p - num1) * (p - num2) * (p - num3));
 	}
-	else return -1;
+	else {
+		return -1;
+	}
 }
 double itc_scir(int r) {
 	if (r > 0) {

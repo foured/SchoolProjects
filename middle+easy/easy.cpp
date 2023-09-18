@@ -51,7 +51,7 @@ int itc_spr(int num1, int num2) {
 	return num1 > 0 && num2 > 0 ? num1 * num2 : -1;
 }
 int itc_str(int num1, int num2, int num3) {
-	if ((num1 > 0 && num2 > 0 && num3 > 0) && ((num1 > num2 + num3) && (num2 > num1 + num3) && (num3 > num1 + num2))) {
+	if ((num1 > 0 && num2 > 0 && num3 > 0) && ((num1 < num2 + num3) && (num2 < num1 + num3) && (num3 < num1 + num2))) {
 		double p = (num1 + num2 + num3) / 2.0;
 		return itc_sqrt(p * (p - num1) * (p - num2) * (p - num3));
 	}

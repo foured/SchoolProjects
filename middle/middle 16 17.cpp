@@ -1,7 +1,6 @@
 #include "middle.h"
 #include "easy.h"
 
-
 int itc_covert_num(long long number, int ss) {
 	number = itc_abs(number);
 	long long a = 0, fd = -1;

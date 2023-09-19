@@ -2,11 +2,11 @@
 #include "easy.h"
 
 int itc_second_simple_max_num(long long num) {
-	num = itc_abs(num);
+	//num = itc_abs(num);
 	
 	int max = -1, max1 = -1, num1 = num, i = 0, i2 = 0, idx = 0;
 
-	while (num > 0) {
+	while (num) {
 		i++;
 		int d = num % 10;
 		if (d > max) {
@@ -15,7 +15,7 @@ int itc_second_simple_max_num(long long num) {
 		}
 		num /= 10;
 	}
-	while (num1 > 0) {
+	while (num1) {
 		i2++;
 		int d = num1 % 10;
 		if (i2 != idx && max1 < d) max1 = d;
@@ -25,10 +25,10 @@ int itc_second_simple_max_num(long long num) {
 	else return max1;
 }
 long long itc_bin_num(long long number) {
-	number = itc_abs(number);
+	//number = itc_abs(number);
 	
 	long long a = 0, fd = -1;
-	while (number > 0) {
+	while (number) {
 		int t = number % 2;
 		if (fd == -1) fd = t;
 		a = a * 10 + t;
@@ -44,9 +44,9 @@ long long itc_bin_num(long long number) {
 	return m;
 }
 long long itc_oct_num(long long number) {
-	number = itc_abs(number);
+	//number = itc_abs(number);
 	long long a = 0, fd = -1;
-	while (number > 0) {
+	while (number) {
 		int t = number % 8;
 		if (fd == -1) fd = t;
 		a = a * 10 + t;
@@ -62,9 +62,9 @@ long long itc_oct_num(long long number) {
 	return m;
 }
 int itc_rev_bin_num(long long number) {
-	number = itc_abs(number);
+	//number = itc_abs(number);
 	long long a = 0, len = itc_len_num(number);
-	for (long long i = 0; number > 0; i++) {
+	for (long long i = 0; number; i++) {
 		int t = number % 10;
 		a += t * itc_pow(2, i);
 		number /= 10;
@@ -72,9 +72,9 @@ int itc_rev_bin_num(long long number) {
 	return a;
 }
 int itc_rev_oct_num(long long number) {
-	number = itc_abs(number);
+	//number = itc_abs(number);
 	long long a = 0, len = itc_len_num(number);
-	for (long long i = 0; number > 0; i++) {
+	for (long long i = 0; number; i++) {
 		int t = number % 10;
 		a += t * itc_pow(8, i);
 		number /= 10;

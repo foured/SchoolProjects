@@ -2,9 +2,9 @@
 #include "easy.h"
 
 int itc_covert_num(long long number, int ss) {
-	number = itc_abs(number);
+	//number = itc_abs(number);
 	long long a = 0, fd = -1;
-	while (number > 0) {
+	while (number) {
 		int t = number % ss;
 		if (fd == -1) fd = t;
 		a = a * 10 + t;
@@ -20,9 +20,9 @@ int itc_covert_num(long long number, int ss) {
 	return m;
 }
 int itc_rev_covert_num(long long number, int ss) {
-	number = itc_abs(number);
+	//number = itc_abs(number);
 	long long a = 0, len = itc_len_num(number);
-	for (long long i = 0; number > 0; i++) {
+	for (long long i = 0; number; i++) {
 		int t = number % 10;
 		a += t * itc_pow(ss, i);
 		number /= 10;

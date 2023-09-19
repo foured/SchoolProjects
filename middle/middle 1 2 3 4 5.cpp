@@ -1,11 +1,11 @@
 #include "middle.h"
 #include "easy.h"
 
-void itc_num_print(int n) {
+void itc_num_print(long long n) {
 	std::cout << n << std::endl;
 }
-int itc_len_num(int n) {
-	int sum = 0;
+long long  itc_len_num(long long  n) {
+	long long  sum = 0;
 	n = itc_abs(n);
 	while (n > 0) {
 		sum++;
@@ -13,8 +13,8 @@ int itc_len_num(int n) {
 	}
 	return sum;
 }
-int itc_sum_num(long long num) {
-	int sum = 0;
+long long  itc_sum_num(long long num) {
+	long long  sum = 0;
 
 	num = itc_abs(num);
 	
@@ -25,7 +25,7 @@ int itc_sum_num(long long num) {
 	return sum;
 }
 long long itc_multi_num(long long num) {
-	int sum = 1;
+	long long  sum = 1;
 	num = itc_abs(num);
 	
 	while (num > 0) {
@@ -34,12 +34,12 @@ long long itc_multi_num(long long num) {
 	}
 	return sum;
 }
-int itc_max_num(long long num) {
-	int max = -1;
+long long  itc_max_num(long long num) {
+	long long  max = -1;
 	num = itc_abs(num);
 	
 	while (num > 0) {
-		int d = num % 10;
+		long long  d = num % 10;
 		if (d > max) max = d;
 		num /= 10;
 	}

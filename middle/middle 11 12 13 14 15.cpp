@@ -2,6 +2,8 @@
 #include "easy.h"
 
 int itc_second_simple_max_num(long long num) {
+	num = itc_abs(num);
+	
 	int max = -1, max1 = -1, num1 = num, i = 0, i2 = 0, idx = 0;
 
 	while (num > 0) {
@@ -23,6 +25,8 @@ int itc_second_simple_max_num(long long num) {
 	else return max1;
 }
 long long itc_bin_num(long long number) {
+	num = itc_abs(number);
+	
 	long long a = 0, fd = -1;
 	while (number > 0) {
 		int t = number % 2;
@@ -40,6 +44,7 @@ long long itc_bin_num(long long number) {
 	return m;
 }
 long long itc_oct_num(long long number) {
+	num = itc_abs(number);
 	long long a = 0, fd = -1;
 	while (number > 0) {
 		int t = number % 8;
@@ -57,6 +62,7 @@ long long itc_oct_num(long long number) {
 	return m;
 }
 int itc_rev_bin_num(long long number) {
+	num = itc_abs(number);
 	long long a = 0, len = itc_len_num(number);
 	for (long long i = 0; number > 0; i++) {
 		int t = number % 10;
@@ -66,6 +72,7 @@ int itc_rev_bin_num(long long number) {
 	return a;
 }
 int itc_rev_oct_num(long long number) {
+	num = itc_abs(number);
 	long long a = 0, len = itc_len_num(number);
 	for (long long i = 0; number > 0; i++) {
 		int t = number % 10;

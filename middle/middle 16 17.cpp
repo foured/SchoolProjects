@@ -3,6 +3,7 @@
 
 
 int itc_covert_num(long long number, int ss) {
+	num = itc_abs(number);
 	long long a = 0, fd = -1;
 	while (number > 0) {
 		int t = number % ss;
@@ -20,6 +21,7 @@ int itc_covert_num(long long number, int ss) {
 	return m;
 }
 int itc_rev_covert_num(long long number, int ss) {
+	num = itc_abs(number);
 	long long a = 0, len = itc_len_num(number);
 	for (long long i = 0; number > 0; i++) {
 		int t = number % 10;

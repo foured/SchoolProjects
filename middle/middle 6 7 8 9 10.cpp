@@ -4,7 +4,7 @@
 
 int itc_min_num(long long num) {
 	int min = 10;
-
+	num = itc_abs(num);
 	while (num > 0) {
 		int d = num % 10;
 		if (d < min) min = d;
@@ -14,6 +14,7 @@ int itc_min_num(long long num) {
 }
 int itc_rev_num(long long num) {
 	long long res = 0;
+	num = itc_abs(num);
 
 	while (num > 0) {
 		int d = num % 10;
@@ -25,6 +26,8 @@ int itc_rev_num(long long num) {
 }
 int itc_null_count(long long num) {
 	int sum = 0;
+	num = itc_abs(num);
+	
 	while (num > 0) {
 		int d = num % 10;
 		if (d == 0)
@@ -34,6 +37,7 @@ int itc_null_count(long long num) {
 	return sum;
 }
 bool itc_mirror_count(long long num) {
+	num = itc_abs(num);
 	long long num1 = num, res = 0;
 
 	while (num1 > 0) {
@@ -55,6 +59,8 @@ bool itc_mirror_count(long long num) {
 	return res == num;
 }
 int itc_second_max_num(long long num) {
+	num = itc_abs(num);
+	
 	int max = -1, max1 = -1, num1 = num;
 
 	while (num > 0) {

@@ -1,12 +1,17 @@
 #include "middle.h"
-#include "easy.h"
 
 int itc_covert_num(long long number, int ss) {
-	//number = itc_abs(number);
-	long long a = 0, fd = -1;
+	long long a = 0, zeros = 0, n = number;
+	bool isNotFirstZero = false;
+
 	while (number) {
 		int t = number % ss;
-		if (fd == -1) fd = t;
+
+		if (!isNotFirstZero && t == 0)
+			zeros++;
+		else
+			isNotFirstZero = true;
+
 		a = a * 10 + t;
 		number /= ss;
 	}
@@ -16,7 +21,11 @@ int itc_covert_num(long long number, int ss) {
 		m = m * 10 + a % 10;
 		a /= 10;
 	}
-	if (fd == 0) m *= 10;
+
+	for (int i = 0; i < zeros; i++) {
+		m *= 10;
+	}
+
 	return m;
 }
 int itc_rev_covert_num(long long number, int ss) {

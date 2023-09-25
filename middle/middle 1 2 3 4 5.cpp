@@ -1,5 +1,4 @@
 #include "middle.h"
-#include "easy.h"
 
 void itc_num_print(int n) {
 	std::cout << n << std::endl;
@@ -21,24 +20,22 @@ int itc_sum_num(long long num) {
 		sum += num % 10;
 		num /= 10;
 	}
-	return sum;
+	return itc_abs(sum);
 }
 long long itc_multi_num(long long num) {
 	int sum = 1;
-	//num = itc_abs(num);
 	
 	while (num) {
 		sum *= num % 10;
 		num /= 10;
 	}
-	return sum;
+	return itc_abs(sum);
 }
 int itc_max_num(long long num) {
 	int max = -1;
-	//num = itc_abs(num);
 	
 	while (num) {
-		int d = num % 10;
+		int d = itc_abs(num % 10);
 		if (d > max) max = d;
 		num /= 10;
 	}

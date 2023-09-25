@@ -1,12 +1,11 @@
 #include "middle.h"
-#include "easy.h"
 
 
 int itc_min_num(long long num) {
 	int min = 10;
 	//num = itc_abs(num);
 	while (num) {
-		int d = num % 10;
+		int d = itc_abs(num % 10);
 		if (d < min) min = d;
 		num /= 10;
 	}
@@ -14,7 +13,6 @@ int itc_min_num(long long num) {
 }
 int itc_rev_num(long long num) {
 	long long res = 0;
-	//num = itc_abs(num);
 
 	while (num) {
 		int d = num % 10;
@@ -22,22 +20,20 @@ int itc_rev_num(long long num) {
 		num /= 10;
 	}
 	res /= 10;
-	return itc_sum_num(res);
+	return itc_len_num(res);
 }
 int itc_null_count(long long num) {
 	int sum = 0;
-	//num = itc_abs(num);
 	
 	while (num) {
-		int d = num % 10;
+		int d = itc_abs(num % 10);
 		if (d == 0)
 			sum++;
 		num /= 10;
 	}
 	return sum;
 }
-bool itc_mirror_count(long long num) {
-	//num = itc_abs(num);
+bool itc_mirror_num(long long num) {
 	long long num1 = num, res = 0;
 
 	while (num1) {
@@ -54,24 +50,21 @@ bool itc_mirror_count(long long num) {
 		num /= 10;
 	}
 	bool otv = res == num;
-	if (res) std::cout << "TRUE" << std::endl;
-	else  std::cout << "FALSE" << std::endl;
-	return res == num;
+	//if (otv) std::cout << "TRUE" << std::endl;
+	//else  std::cout << "FALSE" << std::endl;
+	return otv;
 }
-int itc_second_max_num(long long num) {
-	//num = itc_abs(num);
-	
-	int max = -1, max1 = -1, num1 = num;
-
-	while (num) {
-		int d = num % 10;
-		if (d > max) max = d;
-		num /= 10;
+int itc_mirror_count(long long num) {
+	int n = 0;
+	if (num > 0) {
+		for (int i = 1; i < num; i++) {
+			n += itc_mirror_num(i);
+		}
 	}
-	while (num1 > 0) {
-		int d = num1 % 10;
-		if (d > max1 && d != max) max1 = d;
-		num1 /= 10;
+	else {
+		for (int i = 1; i > num; i--) {
+			n += itc_mirror_num(i);
+		}
 	}
-	return max1;
+	return n;
 }

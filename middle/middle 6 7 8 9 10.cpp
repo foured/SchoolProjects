@@ -3,7 +3,7 @@
 
 int itc_min_num(long long num) {
 	int min = 10;
-	//num = itc_abs(num);
+	if (num == 0) return 1;
 	while (num) {
 		int d = itc_abs(num % 10);
 		if (d < min) min = d;
@@ -24,7 +24,8 @@ int itc_rev_num(long long num) {
 }
 int itc_null_count(long long num) {
 	int sum = 0;
-	
+	if (num == 0) return 1;
+
 	while (num) {
 		int d = itc_abs(num % 10);
 		if (d == 0)

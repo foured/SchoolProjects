@@ -29,7 +29,6 @@ int itc_covert_num(long long number, int ss) {
 	return m;
 }
 int itc_rev_covert_num(long long number, int ss) {
-	//number = itc_abs(number);
 	long long a = 0, len = itc_len_num(number);
 	for (long long i = 0; number; i++) {
 		int t = number % 10;

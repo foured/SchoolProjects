@@ -32,7 +32,7 @@ long long itc_multi_num(long long num) {
 }
 int itc_max_num(long long num) {
 	int max = -1;
-	if (num == 0) return 1;
+	if (num == 0) return 0;
 	while (num) {
 		int d = itc_abs(num % 10);
 		if (d > max) max = d;

@@ -3,7 +3,7 @@
 
 int itc_min_num(long long num) {
 	int min = 10;
-	if (num == 0) return 1;
+	if (num == 0) return 0;
 	while (num) {
 		int d = itc_abs(num % 10);
 		if (d < min) min = d;

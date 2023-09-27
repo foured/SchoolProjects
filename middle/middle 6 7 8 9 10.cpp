@@ -58,12 +58,12 @@ bool itc_mirror_num(long long num) {
 int itc_mirror_count(long long num) {
 	int n = 0;
 	if (num > 0) {
-		for (int i = 1; i < num; i++) {
+		for (int i = 1; i <= num; i++) {
 			n += itc_mirror_num(i);
 		}
 	}
 	else {
-		for (int i = 1; i > num; i--) {
+		for (int i = 1; i >= num; i--) {
 			n += itc_mirror_num(i);
 		}
 	}

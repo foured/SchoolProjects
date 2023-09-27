@@ -15,10 +15,11 @@ int itc_rev_num(long long num) {
 	long long res = 0;
 
 	while (num) {
-		int d = num % 10;
+		int d = itc_abs(num % 10);
 		res = res * 10 + (d * 10);
 		num /= 10;
 	}
+	std::cout << res << std::endl;
 	res /= 10;
 	return itc_len_num(res);
 }

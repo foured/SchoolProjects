@@ -3,7 +3,7 @@
 void itc_num_print(int n) {
 	std::cout << n << std::endl;
 }
-int itc_len_num(int n) {
+int itc_len_num(long long n) {
 	int sum = 0;
 	if (n == 0) return 1;
 	while (n) {

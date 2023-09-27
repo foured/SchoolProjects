@@ -6,7 +6,7 @@
 #include "easy.h"
 
 void itc_num_print(int n);
-int itc_len_num(int n);
+int itc_len_num(long long n);
 int itc_sum_num(long long num);
 long long itc_multi_num(long long num);
 int itc_max_num(long long num);
